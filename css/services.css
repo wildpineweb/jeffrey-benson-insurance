@@ -1,0 +1,464 @@
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #banner-559 {
+    padding: var(--sectionPadding);
+    /* 137px - 212px */
+    padding-top: clamp(14.5625rem, 25vw, 16.25rem);
+    /* clips the line from causing overflow issues for going off screen */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #banner-559 .cs-container {
+    text-align: center;
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #banner-559 .cs-int-topper {
+    font-size: var(--topperFontSize);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    color: var(--bodyTextColorWhite);
+    display: block;
+    position: relative;
+  }
+  #banner-559 .cs-int-topper:before {
+    /* orange line */
+    content: "";
+    width: 50vw;
+    height: 2px;
+    background: var(--secondary);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+  }
+  #banner-559 .cs-int-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #banner-559 .cs-breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-559 .cs-link {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.2em;
+    text-decoration: none;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-559 .cs-link:last-of-type {
+    /* remove the chevron on the last list item */
+  }
+  #banner-559 .cs-link:last-of-type::after {
+    display: none;
+  }
+  #banner-559 .cs-link:after {
+    /* chevron - added as pseudo to make adding and removing them easier */
+    content: "";
+    width: 1.875rem;
+    height: 0.125rem;
+    /* 12px - 24px */
+    margin: 0 clamp(0.75rem, 2vw, 1.5rem);
+    background-color: #fff;
+  }
+  #banner-559 .cs-link.cs-active {
+    color: var(--headerColor);
+  }
+  #banner-559 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #banner-559 .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: var(--primary);
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #banner-559 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode .cs-background:before {
+    /* background color overlay */
+    background: #13222F !important;
+  }
+  body.dark-mode .cs-active {
+    color: var(--primary) !important;
+  }
+}
+/*-- -------------------------- -->
+<---        Side By Side        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #health,
+  #dental,
+  #vision,
+  #medicare,
+  #life,
+  #supplemental {
+    padding: var(--sectionPadding);
+    scroll-margin: 125px;
+  }
+  #health .cs-container,
+  #dental .cs-container,
+  #vision .cs-container,
+  #medicare .cs-container,
+  #life .cs-container,
+  #supplemental .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #health .cs-content,
+  #dental .cs-content,
+  #vision .cs-content,
+  #medicare .cs-content,
+  #life .cs-content,
+  #supplemental .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 39.375rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #health .cs-text,
+  #dental .cs-text,
+  #vision .cs-text,
+  #medicare .cs-text,
+  #life .cs-text,
+  #supplemental .cs-text {
+    max-width: 35.125rem;
+    margin-bottom: 1rem;
+  }
+  #health .cs-text:last-of-type,
+  #dental .cs-text:last-of-type,
+  #vision .cs-text:last-of-type,
+  #medicare .cs-text:last-of-type,
+  #life .cs-text:last-of-type,
+  #supplemental .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #health .cs-button-solid,
+  #dental .cs-button-solid,
+  #vision .cs-button-solid,
+  #medicare .cs-button-solid,
+  #life .cs-button-solid,
+  #supplemental .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #health .cs-button-solid:before,
+  #dental .cs-button-solid:before,
+  #vision .cs-button-solid:before,
+  #medicare .cs-button-solid:before,
+  #life .cs-button-solid:before,
+  #supplemental .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #health .cs-button-solid:hover:before,
+  #dental .cs-button-solid:hover:before,
+  #vision .cs-button-solid:hover:before,
+  #medicare .cs-button-solid:hover:before,
+  #life .cs-button-solid:hover:before,
+  #supplemental .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #health .cs-picture,
+  #dental .cs-picture,
+  #vision .cs-picture,
+  #medicare .cs-picture,
+  #life .cs-picture,
+  #supplemental .cs-picture {
+    width: 90%;
+    /* pushes down the by the same amount as the yellow circle overflows the container */
+    /* 40px -88px */
+    margin: 0 clamp(2.5rem, 6.9vw, 5.5rem) 2.75rem 0;
+    position: relative;
+    display: block;
+    /* width divided by height */
+    aspect-ratio: 1.30909091;
+  }
+  #health .cs-picture:before,
+  #dental .cs-picture:before,
+  #vision .cs-picture:before,
+  #medicare .cs-picture:before,
+  #life .cs-picture:before,
+  #supplemental .cs-picture:before {
+    /* yellow circle */
+    content: "";
+    width: 13.5625rem;
+    height: 13.5625rem;
+    background: var(--primaryLight);
+    opacity: 1;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    bottom: -2.75rem;
+    /* wrapped in a clamp so we can have a negative clamp */
+    right: calc(clamp(2.5rem, 5.9vw + 1rem, 5.5rem)*-1);
+  }
+  #health .cs-picture img,
+  #dental .cs-picture img,
+  #vision .cs-picture img,
+  #medicare .cs-picture img,
+  #life .cs-picture img,
+  #supplemental .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #health,
+  #dental,
+  #vision,
+  #medicare,
+  #life,
+  #supplemental {
+    overflow: visible;
+  }
+  #health .cs-container,
+  #dental .cs-container,
+  #vision .cs-container,
+  #medicare .cs-container,
+  #life .cs-container,
+  #supplemental .cs-container {
+    max-width: 80rem;
+    justify-content: space-between;
+    align-items: center;
+    /* set flexbox back to the row orientation */
+    flex-direction: row;
+  }
+  #health .cs-picture,
+  #dental .cs-picture,
+  #vision .cs-picture,
+  #medicare .cs-picture,
+  #life .cs-picture,
+  #supplemental .cs-picture {
+    /* 300px - 455px */
+    width: clamp(18.75rem, 42.5vw, 28.4375rem);
+    height: 17.625rem;
+    /* prevent flexbox from squishing it */
+    flex: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #health .cs-picture:before,
+  body.dark-mode #dental .cs-picture:before,
+  body.dark-mode #vision .cs-picture:before,
+  body.dark-mode #medicare .cs-picture:before,
+  body.dark-mode #life .cs-picture:before,
+  body.dark-mode #supplemental .cs-picture:before {
+    background: #13222F;
+  }
+  body.dark-mode #health .cs-title,
+  body.dark-mode #dental .cs-title,
+  body.dark-mode #vision .cs-title,
+  body.dark-mode #medicare .cs-title,
+  body.dark-mode #life .cs-title,
+  body.dark-mode #supplemental .cs-title,
+  body.dark-mode #health .cs-text,
+  body.dark-mode #dental .cs-text,
+  body.dark-mode #vision .cs-text,
+  body.dark-mode #medicare .cs-text,
+  body.dark-mode #life .cs-text,
+  body.dark-mode #supplemental .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+}
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #dental,
+  #medicare,
+  #supplemental {
+    background-color: #f7f7f7;
+  }
+  #dental .cs-picture,
+  #medicare .cs-picture,
+  #supplemental .cs-picture {
+    /* pushes down the by the same amount as the yellow circle overflows the container */
+    /* 40px -88px */
+    margin-left: clamp(2.5rem, 6.9vw, 5.5rem);
+    margin-right: 0;
+  }
+  #dental .cs-picture:before,
+  #medicare .cs-picture:before,
+  #supplemental .cs-picture:before {
+    right: auto;
+    left: calc(clamp(2.5rem, 5.9vw + 1rem, 5.5rem)*-1);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #dental .cs-picture,
+  #medicare .cs-picture,
+  #supplemental .cs-picture {
+    /* sends it to the right in the 2nd position */
+    order: 2;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #dental,
+  body.dark-mode #medicare,
+  body.dark-mode #supplemental {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+/*-- -------------------------- -->
+<---           Logos            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #logos-857 {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #logos-857 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 50rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #logos-857 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #logos-857 .cs-title {
+    margin: 0;
+    font-size: clamp(2rem, 6.4vw, 2.5rem);
+    font-weight: 600;
+  }
+  #logos-857 .cs-logo-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  #logos-857 .cs-logo {
+    width: 40%;
+    max-width: 7.5rem;
+    height: auto;
+    margin: 0;
+    display: block;
+  }
+  .logo-background {
+    background-color: #f7f7f7;
+  }
+}
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #logos-857 .cs-container {
+    max-width: 80rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode .logo-background {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode .logo-background .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+}

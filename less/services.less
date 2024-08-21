@@ -1,0 +1,464 @@
+                                
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #banner-559 {
+        padding: var(--sectionPadding);
+        /* 137px - 212px */
+        padding-top: clamp(14.5625rem, 25vw, 16.25rem);
+        /* clips the line from causing overflow issues for going off screen */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            text-align: center;
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: (16/16rem);
+        }
+
+        .cs-int-topper {
+            font-size: var(--topperFontSize);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            margin: 0;
+            padding: 0 0 0 (20/16rem);
+            color: var(--bodyTextColorWhite);
+            display: block;
+            position: relative;
+
+            &:before {
+                /* orange line */
+                content: "";
+                width: 50vw;
+                height: 2px;
+                background: var(--secondary);
+                opacity: 1;
+                position: absolute;
+                display: block;
+                top: 50%;
+                right: 100%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .cs-int-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+            position: relative;
+        }
+
+        .cs-breadcrumbs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-link {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.2em;
+            text-decoration: none;
+            color: var(--bodyTextColorWhite);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:last-of-type {
+                /* remove the chevron on the last list item */
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                /* chevron - added as pseudo to make adding and removing them easier */
+                content: "";
+                width: (30/16rem);
+                height: (2/16rem);
+                /* 12px - 24px */
+                margin: 0 clamp(0.75rem, 2vw, 1.5rem);
+                background-color: #fff;
+            }
+
+            &.cs-active {
+                color: var(--headerColor);
+            }
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* background color overlay */
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: var(--primary);
+                opacity: 0.8;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        .cs-background {
+            &:before {
+                /* background color overlay */
+                background: #13222F !important;
+            }
+        }
+        .cs-active {
+            color: var(--primary) !important;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---        Side By Side        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #health,
+    #dental,
+    #vision,
+    #medicare,
+    #life,
+    #supplemental {
+        padding: var(--sectionPadding);
+        scroll-margin: 125px;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (630/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-text {
+            max-width: (562/16rem);
+            margin-bottom: (16/16rem);
+
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-picture {
+            width: 90%;
+            /* pushes down the by the same amount as the yellow circle overflows the container */
+            /* 40px -88px */
+            margin: 0 clamp(2.5rem, 5.9vw + 1rem, 5.5rem) (44/16rem) 0;
+            position: relative;
+            display: block;
+            /* width divided by height */
+            aspect-ratio: 288/220;
+
+            &:before {
+                /* yellow circle */
+                content: "";
+                width: (217/16rem);
+                height: (217/16rem);
+                background: var(--primaryLight);
+                opacity: 1;
+                border-radius: 50%;
+                position: absolute;
+                display: block;
+                bottom: (-44/16rem);
+                /* wrapped in a clamp so we can have a negative clamp */
+                right: ~"calc(clamp(2.5rem, 5.9vw + 1rem, 5.5rem)*-1)";
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #health,
+    #dental,
+    #vision,
+    #medicare,
+    #life,
+    #supplemental {
+        overflow: visible;
+        .cs-container {
+            max-width: (1280/16rem);
+            justify-content: space-between;
+            align-items: center;
+            /* set flexbox back to the row orientation */
+            flex-direction: row;
+        }
+
+        .cs-picture {
+            /* 300px - 455px */
+            width: clamp(18.75rem, 42.5vw, 28.4375rem);
+            height: (282/16rem);
+            /* prevent flexbox from squishing it */
+            flex: none;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #health,
+        #dental,
+        #vision,
+        #medicare,
+        #life,
+        #supplemental {
+            .cs-picture {
+                &:before {
+                    background: #13222F;
+                }
+            }
+
+            .cs-title,
+            .cs-text {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #dental,
+    #medicare,
+    #supplemental {
+        background-color: #f7f7f7;
+        .cs-picture {
+            /* pushes down the by the same amount as the yellow circle overflows the container */
+            /* 40px -88px */
+            margin-left: clamp(2.5rem, 5.9vw + 1rem, 5.5rem);
+            margin-right: 0;
+            &:before {
+                right: auto;
+                left: ~"calc(clamp(2.5rem, 5.9vw + 1rem, 5.5rem)*-1)";
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #dental,
+    #medicare,
+    #supplemental {
+        .cs-picture {
+            /* sends it to the right in the 2nd position */
+            order: 2;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #dental,
+        #medicare,
+        #supplemental {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Logos            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #logos-857 {
+        padding: var(--sectionPadding);
+        padding-top: 0;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (800/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0;
+            font-size: clamp(2rem, 6.4vw, 2.5rem);
+            font-weight: 600;
+        }
+
+        .cs-logo-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: (40/16rem);
+        }
+
+        .cs-logo {
+            width: 40%;
+            max-width: (120/16rem);
+            height: auto;
+            margin: 0;
+            display: block;
+        }
+    }
+
+    .logo-background {
+        background-color: #f7f7f7;
+    }
+}
+
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #logos-857 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        .logo-background {
+            background-color: fade(#000, 20%);
+
+            .cs-title {
+                color: var(--bodyTextColorWhite);
+            }
+
+            // .cs-logo {
+            //     filter: grayscale(100) brightness(2000%);
+            // }
+        }
+    }
+}
+                     
+
+                                
