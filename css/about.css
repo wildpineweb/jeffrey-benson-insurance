@@ -204,6 +204,34 @@
   #sbs-98 .cs-li:last-of-type {
     margin-bottom: 0;
   }
+  #sbs-98 .cs-link {
+    /* 16px - 20px */
+    font-size: clamp(0.875rem, 1.3vw, 1.125rem);
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    display: block;
+    position: relative;
+  }
+  #sbs-98 .cs-link:before {
+    /* Animated underline */
+    content: '';
+    width: 0%;
+    height: 2px;
+    /* current color of the parent */
+    background: currentColor;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: -0.125rem;
+    left: 0;
+    transition: width .3s;
+  }
+  #sbs-98 .cs-link:hover:before {
+    width: 100%;
+  }
+  #sbs-98 .cs-link:last-of-type {
+    margin-bottom: 0;
+  }
   #sbs-98 .cs-number {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.6vw, 1rem);
