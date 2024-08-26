@@ -370,6 +370,9 @@
   body.dark-mode #sbs-98 .cs-button-solid {
     background-color: var(--primary);
   }
+  body.dark-mode #sbs-98 .cs-link {
+    color: var(--bodyTextColorWhite);
+  }
 }
 /*-- -------------------------- -->
 <---           Stats            -->
