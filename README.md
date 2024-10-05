@@ -1,0 +1,1 @@
+This website was fully designed and developed by Matt Joslen at Wild Pine Web Designs LLC. Any commits pushed by a non-affiliated GitHub account were made erroneously using the wrong account by none other than Matt himself. Matt has agreed to do better. Go Matt!
